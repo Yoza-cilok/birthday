@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Lala! 🎂</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet"/>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div id="page1" class="page">
+    <h1 class="intro-title">Hai, Lala</h1>
+    <p class="intro-subtitle">aku ada sesuatu buat kamu, mau lihat ga?</p>
+    <button class="btn-klik" id="btnKlik">klik</button>
+  </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div id="page2" class="page">
+    <button class="btn-next" id="btnNext">Next →</button>
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Make a Wish overlay -->
+    <div class="wish-overlay" id="wishOverlay">
+      <div class="wish-text">✨ Make a Wish, Lala! ✨</div>
+      <button class="btn-wish" id="btnWish">siap, tiup lilinnya!</button>
+    </div>
+
+    <h1 class="birthday-title">Happy Birthday</h1>
+
+    <div class="cake-wrapper">
+      <svg class="cake-svg" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- table -->
+        <ellipse cx="130" cy="258" rx="100" ry="14" fill="#f48fb1"/>
+        <rect x="30" y="246" width="200" height="12" rx="6" fill="#ec407a"/>
+        <!-- bottom tier -->
+        <rect x="40" y="185" width="180" height="62" rx="14" fill="#fff"/>
+        <rect x="40" y="214" width="180" height="20" fill="#fce4ec"/>
+        <rect x="40" y="214" width="180" height="4" fill="#f48fb1"/>
+        <rect x="40" y="230" width="180" height="4" fill="#f48fb1"/>
+        <path d="M40,198 Q57,212 74,198 Q91,212 108,198 Q125,212 142,198 Q159,212 176,198 Q193,212 220,198" fill="none" stroke="#fce4ec" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="70"  cy="222" r="4" fill="#f06292" opacity=".8"/>
+        <circle cx="100" cy="222" r="4" fill="#e91e8c" opacity=".8"/>
+        <circle cx="130" cy="222" r="4" fill="#f06292" opacity=".8"/>
+        <circle cx="160" cy="222" r="4" fill="#e91e8c" opacity=".8"/>
+        <circle cx="190" cy="222" r="4" fill="#f06292" opacity=".8"/>
+        <!-- top tier -->
+        <rect x="68" y="120" width="124" height="66" rx="14" fill="#fff"/>
+        <rect x="68" y="148" width="124" height="18" fill="#fce4ec"/>
+        <rect x="68" y="148" width="124" height="4" fill="#f48fb1"/>
+        <rect x="68" y="162" width="124" height="4" fill="#f48fb1"/>
+        <path d="M68,132 Q82,146 97,132 Q112,146 127,132 Q142,146 157,132 Q172,146 192,132" fill="none" stroke="#fce4ec" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="92"  cy="155" r="3.5" fill="#f06292" opacity=".8"/>
+        <circle cx="115" cy="155" r="3.5" fill="#e91e8c" opacity=".8"/>
+        <circle cx="138" cy="155" r="3.5" fill="#f06292" opacity=".8"/>
+        <circle cx="161" cy="155" r="3.5" fill="#e91e8c" opacity=".8"/>
+        <!-- frosting blob -->
+        <!-- candle (swaying + clickable) -->
+        <g class="candle-group" id="candleGroup" style="cursor:pointer">
+          <rect x="123" y="93" width="14" height="37" rx="5" fill="#ce93d8"/>
+          <rect x="123" y="100" width="14" height="5"  rx="2" fill="#f48fb1" opacity=".6"/>
+          <rect x="123" y="111" width="14" height="5"  rx="2" fill="#f48fb1" opacity=".6"/>
+          <rect x="123" y="122" width="14" height="5" rx="2" fill="#f48fb1" opacity=".6"/>
+          <line x1="130" y1="93" x2="130" y2="63" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
+          <g class="flame-g" id="flameGroup">
+            <ellipse cx="130" cy="74" rx="8.5" ry="13" fill="#ffcc02" opacity=".95"/>
+            <ellipse cx="130" cy="77" rx="5.5" ry="9"  fill="#ff9800" opacity=".9"/>
+            <ellipse cx="130" cy="81" rx="3"   ry="5"  fill="#fff3e0" opacity=".85"/>
+          </g>
+        </g>
+      </svg>
+
+      <p class="blow-hint hidden" id="blowHint">🎤 blow out the candles! (or klick)</p>
+      <div class="mic-bar-wrap hidden" id="micBarWrap">
+        <div class="mic-bar" id="micBar"></div>
+      </div>
+    </div>
+
+    <div class="blown-msg" id="blownMsg">🎉 Yay! Happy Birthday! 🎉</div>
+  </div>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <div id="page3" class="page">
+    <h2 class="msg-title">i have a message for you</h2>
+    <p class="msg-subtitle">click this 💌</p>
+    <div class="envelope-wrapper" id="envelopeWrapper">
+
+      <!-- Layer 1: envelope body (behind paper) -->
+      <svg class="env-body" viewBox="0 0 220 155" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="22" width="220" height="133" rx="10" fill="#f48fb1"/>
+        <polygon points="0,155 88,95 132,95 220,155" fill="#ec407a"/>
+        <polygon points="0,22 110,98 0,155"    fill="#f06292" opacity=".55"/>
+        <polygon points="220,22 110,98 220,155" fill="#f06292" opacity=".55"/>
+        <path d="M110,75 C110,75 98,62 91,68 C84,74 91,84 110,93 C129,84 136,74 129,68 C122,62 110,75 110,75 Z" fill="#e91e8c" opacity=".9"/>
+      </svg>
+
+      <!-- Layer 2: paper (slides up) -->
+      <div class="letter-peek">💌</div>
+
+      <!-- Layer 3: flap (on top of paper) -->
+      <svg class="env-flap-layer" viewBox="0 0 220 155" xmlns="http://www.w3.org/2000/svg">
+        <g class="env-flap">
+          <polygon points="0,22 110,96 220,22" fill="#fce4ec"/>
+          <polygon points="0,22 110,96 220,22" fill="#f48fb1" opacity=".2"/>
+          <line x1="0" y1="22" x2="220" y2="22" stroke="#f48fb1" stroke-width="2"/>
+        </g>
+      </svg>
+
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 4 ==================== -->
+  <div id="page4" class="page">
+    <div class="letter-card" id="letterCard">
+      <div class="letter-deco-top">
+        <div class="letter-deco-line"></div>
+        <span>💗</span>
+        <div class="letter-deco-line"></div>
+      </div>
+      <div class="letter-header">for Lala</div>
+      <div class="letter-body" id="letterBody"></div>
+      <div class="letter-footer">from -Y </div>
+    </div>
+    <button class="btn-back" id="btnBack">← Kembali ke Awal</button>
+  </div>
+
+  <!-- Script (harus di bawah HTML, sebelum </body>) -->
+  <script src="script.js"></script>
+</body>
+</html>
