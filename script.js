@@ -169,9 +169,9 @@ env.addEventListener('click',()=>{
 // ✏️ EDIT PESAN DI SINI:
 const MESSAGE=`Happy birthday, Lala! 🎉 Semoga kamu selalu diberikan kesehatan, kebahagiaan, dan dikelilingi oleh hal-hal baik. Semoga semua yang kamu inginkan di tahun ini bisa tercapai ✨
 
-Don’t forget to keep smiling ya, because your smile makes your days (and my days too 🤓) better 🙂
+Don’t forget to keep smiling ya, because your smile makes my day better too 🤓🙂
 
-Btw, kamu suka ga? Sorry ya kalau kadonya agak telat hehe.`;
+Btw, kamu suka ga kadonya? Sorry ya kalau kadonya agak telat hehe.`;
 
 function startPage4(){
   const card=document.getElementById('letterCard');
